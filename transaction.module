@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains transaction.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\transaction\Entity\TransactionEntity;
+
+
+/**
+ * Implements hook_help().
+ */
+function transaction_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the transaction module.
+    case 'help.page.transaction':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Transaction Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function transaction_install() {
+    create_transaction(5);
+}
+
+function create_transaction($count){
+    for ($i = 0; $i < $count; $i++) {
+
+        $a = ["Puma", "Jaguar", "Bounty", "IKEA", "Starbucks", "NIVEA"];
+        $rand_keys = array_rand($a, 2);
+        $recipient = $a[$rand_keys[0]];
+        $sender = $a[$rand_keys[1]];
+
+        $node = TransactionEntity::create(array(
+            'name'        => $recipient . '-'. $sender,
+            'summ'       => rand(10, 1000),
+            'recipient'  => $recipient,
+            'sender'  => $sender,
+        ));
+        $node->save();
+    }
+}
