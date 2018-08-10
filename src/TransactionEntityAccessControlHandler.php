@@ -24,6 +24,9 @@ class TransactionEntityAccessControlHandler extends EntityAccessControlHandler {
         if (!$entity->isPublished()) {
           return AccessResult::allowedIfHasPermission($account, 'view unpublished transaction entities');
         }
+          if($account->hasPermission('edit transaction entities')){
+              return AccessResult::allowedIfHasPermission($account, 'edit transaction entities');
+          }
         return AccessResult::allowedIfHasPermission($account, 'view published transaction entities');
 
       case 'update':
