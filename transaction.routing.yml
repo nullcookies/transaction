@@ -1,0 +1,7 @@
+#transaction.admin_transaction:
+#  path: '/admin/transaction'
+#  defaults:
+#    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+#    _title: 'Transaction'
+#  requirements:
+#    _permission: 'access transaction administration pages'
