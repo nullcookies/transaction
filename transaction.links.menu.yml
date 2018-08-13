@@ -1,21 +1,20 @@
-# transaction.admin_transaction:
-#  title: 'Transaction'
-#  route_name: 'transaction.admin_transaction'
-#  parent: 'system.admin'
-#  description: 'Administer and configure your transaction.'
-#  weight: -7
+transaction_ui.transaction:
+  title: 'Transaction'
+  description: 'Configure transaction.'
+  route_name: transaction.admin_transaction
+  parent: system.admin_structure
 
 # Transaction menu items definition
 entity.transaction_entity.collection:
-  title: 'Transaction list'
+  title: 'Submissions'
   route_name: entity.transaction_entity.collection
   description: 'List Transaction entities'
-  parent: system.admin
-  weight: 100
+  parent: transaction_ui.transaction
+  weight: 15
 
 transaction_entity.admin.structure.settings:
-  title: 'Transaction settings'
+  title: 'Settings'
   description: 'Configure Transaction entities'
   route_name: transaction_entity.settings
-  parent: system.admin
-  weight: 99
+  parent: transaction_ui.transaction
+  weight: 20

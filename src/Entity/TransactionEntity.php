@@ -63,7 +63,7 @@ use Drupal\user\UserInterface;
  *     "revision_revert" = "/admin/structure/transaction_entity/{transaction_entity}/revisions/{transaction_entity_revision}/revert",
  *     "revision_delete" = "/admin/structure/transaction_entity/{transaction_entity}/revisions/{transaction_entity_revision}/delete",
  *     "translation_revert" = "/admin/structure/transaction_entity/{transaction_entity}/revisions/{transaction_entity_revision}/revert/{langcode}",
- *     "collection" = "/admin/structure/transaction_entity",
+ *     "collection" = "/admin/structure/transaction_entity/submissions",
  *   },
  *   field_ui_base_route = "transaction_entity.settings"
  * )
